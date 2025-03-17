@@ -37,12 +37,18 @@ function giveBmi()
     // get the height and width from form and calculate the bmi and print it out
     let h = document.querySelector("#height");
     let w = document.querySelector("#weight");
+    let r = document.querySelector("#result");
+    let rp = document.createElement("p");
     //alert(w.value)
     let bmi = calBmi(h.value,w.value)
-    alert(h)
-    alert(bmi)
+    //alert(h)
+    //ggit alert(bmi)
     let result = checkBmi(bmi)
-    alert(result);
+    //alert(result);
+    rp.textContent=result;
+    r.appendChild(rp);
+
+
 }
 
 function check_button()
@@ -54,9 +60,9 @@ function check_button()
     b.addEventListener("click",giveBmi);
 }
 
-let a = calBmi(1.64,65)
+//let a = calBmi(1.64,65)
 
-let b = checkBmi(a)
+//let b = checkBmi(a)
 
 
 //alert(a+b)
