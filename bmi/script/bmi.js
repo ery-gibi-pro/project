@@ -45,9 +45,27 @@ function giveBmi()
     //ggit alert(bmi)
     let result = checkBmi(bmi)
     //alert(result);
+    // change back ground color based on resul
+
     rp.textContent=result;
     r.appendChild(rp);
 
+    if (result == "under weight")
+    {
+        document.body.style.backgroundColor = "grey";
+    }
+    else if (result == "normal weight")
+    {
+        document.body.style.backgroundColor = "blue";
+    }
+    else if (result == "over weight")
+    {
+        document.body.style.backgroundColor = "yellow";
+    }
+    else
+    {
+        document.body.style.backgroundColor = "red";
+    }
 
 }
 
