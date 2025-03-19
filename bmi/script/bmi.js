@@ -45,28 +45,44 @@ function giveBmi()
     //ggit alert(bmi)
     let result = checkBmi(bmi)
     //alert(result);
+    // the result to print in page
+    let resultWord;
     // change back ground color based on resul
-
-    rp.textContent=result;
-    r.appendChild(rp);
-
+    
     if (result == "under weight")
     {
         document.body.style.backgroundColor = "grey";
+        resultWord = "Under Weight";
     }
     else if (result == "normal weight")
     {
         document.body.style.backgroundColor = "blue";
+        resultWord = "Normal Weight";
     }
     else if (result == "over weight")
     {
         document.body.style.backgroundColor = "yellow";
+        resultWord = "Over Weight";
     }
     else
     {
         document.body.style.backgroundColor = "red";
+        resultWord = "Obese"
     }
 
+    rp.textContent=resultWord;
+    r.appendChild(rp);
+
+    //clear the input box for next value ? or use button to reset thing
+}
+
+function reset()
+{
+    location.reload();
+    let w = document.querySelector('#weight');
+    let h = document.querySelector("#height");
+    w.value = "";
+    h.value = "";
 }
 
 function check_button()
@@ -76,6 +92,9 @@ function check_button()
     let b = document.querySelector("#button");
     //alert(b)
     b.addEventListener("click",giveBmi);
+
+    let r = document.querySelector("#reset");
+    r.addEventListener("click",reset);
 }
 
 //let a = calBmi(1.64,65)
